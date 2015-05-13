@@ -1,7 +1,8 @@
 FROM debian:jessie
 
-RUN apt-get update && apt-get install -y nginx
+RUN apt-get update && apt-get install -y git
+
 RUN mkdir -p /var/www/symfony && touch /var/www/symfony/plouf
-RUN apt-get install -y git && git clone git@github.com:Matthiew/FOSUserBundle.git /var/www/fosuserbundle
+RUN git clone git@github.com:Matthiew/FOSUserBundle.git /var/www/fosuserbundle
 
 VOLUME /var/www
